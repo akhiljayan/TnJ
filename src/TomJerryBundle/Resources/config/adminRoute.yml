@@ -1,0 +1,7 @@
+admin_login_page:
+    path:     /tom&jerry/adminpanel
+    defaults: { _controller: TomJerryBundle:Admin:adminLogin }
+
+_index:
+    pattern: /panel
+    defaults: { _controller: "TomJerryBundle:Admin:mainRedirect" }

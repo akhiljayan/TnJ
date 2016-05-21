@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Tom And Jerry Nursury School" />
+        <meta name="author" content="Aegizure Technologies, Kerala <akhil jayan>" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>
+            {% block title %}
+                Welcome!
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/akjn/adminlte/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/akjn/adminlte/css/AdminLTE.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/akjn/adminlte/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('bundles/tomjerry/admin/css/sweetalert.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('bundles/tomjerry/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css" />
+            <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+            <link href="{{ asset('bundles/tomjerry/admin/css/style.css') }}" rel='stylesheet' type='text/css' />
+            <link href="{{ asset('bundles/tomjerry/admin/css/icon-font.min.css') }}" rel='stylesheet' type='text/css' />
+            <link href="{{ asset('bundles/tomjerry/admin/css/animate.css') }}" rel="stylesheet"> 
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/akjn/js/jquery/jquery.min.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/jquery/jquery-migrate.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/adminlte/js/bootstrap.min.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/jquery-ui/minified/jquery.ui.datepicker.min.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/jquery-ui/minified/jquery.ui.core.min.js') }}"  type="text/javascript" ></script>
+            <script src="{{ asset('bundles/akjn/js/sjcl.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/must.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/jquery.validate.min.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/akjn/js/additional-methods.min.js') }}" type="text/javascript"  ></script>
+
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/bootstrap-confirmation.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.toast.min.js') }}"  type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.bootstrap.wizard.js') }}"  type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/tinymce/tinymce.min.js') }}" type="text/javascript"  ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/tiny_mce_config_fyfi.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/sweetalert-dev.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery-ui.min.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/bootstrap-datepicker.min.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.hashchange.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.easytabs.js') }}" type="text/javascript" ></script>
+
+            <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/wow.min.js') }}"></script>
+            <script>new WOW().init();</script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/Chart.js') }}"></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/jquery.nicescroll.js') }}"></script>
+            <script src="{{ asset('bundles/tomjerry/admin/js/scripts.js') }}"></script>
+            <script type="text/javascript">
+                (function ($) {
+                    $(document).ready(function () {
+                        var $imgLoading = '<img src="{{ asset('bundles/app/images/ajax-loader.gif')}}" alt="Loading" /> ';
+                        $("a").tooltip({
+                            animation: true,
+                            html: false,
+                            placement: "top",
+                            trigger: "hover",
+                            position: "fixed",
+                            container: 'body',
+                            opacity: 10
+                        });
+                        $("input").addClass("form-control");
+                        $("select").addClass("form-control");
+                        $("button").addClass("form-control");
+                        $("button").tooltip({
+                            animation: true,
+                            html: false,
+                            placement: "top",
+                            trigger: "hover",
+                            position: "fixed",
+                            container: 'body',
+                            opacity: 10
+                        });
+                        $('.date-picker').datepicker({
+                            changeMonth: true,
+                            changeYear: true,
+                            showButtonPanel: true,
+                            dateFormat: 'dd-mm-yy',
+                            onClose: function (dateText, inst) {
+                                $(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay));
+                            }
+                        });
+                    });
+                })(jQuery);
+            </script>
+        {% endblock %}
+    </body>
+</html>

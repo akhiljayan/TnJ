@@ -1,0 +1,26 @@
+{% extends '::sitebase.html.twig' %}
+{% block title %}
+    Tom And Jerry : Home
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% block styleInSitePage %}
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+    {% block siteContent %} 
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% block jsInSitePage %}
+    {% endblock %}
+    <script type="text/javascript">
+        $(".formErrorMsg").tooltip({
+            tooltipClass: "formErrorMsgTooltip"
+        });
+    </script>
+{% endblock %}

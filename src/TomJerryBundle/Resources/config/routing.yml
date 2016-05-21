@@ -1,0 +1,11 @@
+tom_jerry_homepage:
+    path:     /
+    defaults: { _controller: TomJerryBundle:Default:index }
+    
+home_page:
+    path:     /
+    defaults: { _controller: TomJerryBundle:Default:index }
+
+admin_route:
+    resource: "adminRoute.yml"
+    prefix: /admin

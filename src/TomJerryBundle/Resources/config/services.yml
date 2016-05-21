@@ -1,0 +1,4 @@
+services:
+#    tom_jerry.example:
+#        class: TomJerryBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
