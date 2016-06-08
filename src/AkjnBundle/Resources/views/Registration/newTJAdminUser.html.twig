@@ -7,6 +7,12 @@
         @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
         @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 
+        label{
+            margin-bottom: 5px;
+            font-size:15px;
+            float:right;
+        }
+
         body{
             margin: 0;
             padding: 0;
@@ -65,11 +71,12 @@
         }
 
         .registration{
+            margin-top:55px;
             position: absolute;
             top: calc(20% - 75px);
-            left: calc(45% - 50px);
+            left: calc(20% - 50px);
             height: 150px;
-            width: 477px;
+            width: 80%;
             height:274px;
             padding: 10px;
             z-index: 2;
@@ -154,18 +161,19 @@
             background: rgba(255,255,255,.2) !important;
             display: block !important;
             margin: 15px !important;
-            width: 300px !important;  
+            width: 100% !important;  
             color:white !important;
             font-size:18px !important;
             height: 54px !important;   
         }
 
         .registration-submit{
+            float:left;
             padding: 16px !important;
             margin: 15px !important;
             float:right !important;
             height: 155px !important;
-            width: 50px !important;
+            width: 152px !important;
             border: 0px !important;
             background: #e74c3c !important;
             border-radius:7px !important;
@@ -181,6 +189,7 @@
 {% endblock %}
 
 {% block adminContent %}
+
     <div class="body"></div>
     <div class="grad"></div>
     <div class="header">
@@ -189,41 +198,46 @@
                 <div>Tom<span>& Jerry Registration</span></div>
             </div>
             <div class="col-md-4 pull-right">
-                <a href="{{path('registration_create')}}" class="btn btn-warning pull-right">Cancel</a>
+                <a href="{{path('login')}}" class="btn btn-warning pull-right">Cancel</a>
             </div>
         </div>
-    </div>
-    <br>
+    </div><br>
     <div class="registration">
         {{form_start(form)}}
+        <div class="col-md-12">
+            <div class="col-md-6">
+                {{form_row(form.name)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.userName)}}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                {{form_row(form.email)}}
+            </div>
+            <div class="col-md-6">
+                {{form_row(form.mobileNumber)}}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                {{form_row(form.password)}}
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        {{form_row(form.submit)}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form_row(form.reset)}}
+                    </div>
+                </div>
+            </div>
+        </div>
         {{ form_end(form) }} 
     </div>
-    {#<div class="login">
-        <form action="{{ path('fos_user_security_check') }}" id="{{form.vars.id}}" method="post"  autocomplete="off" >
-            <div class="col-md-12">
-                <div class="col-md-11">
-                    <input class="login-input" type="text" autocomplete="off" id="_peru" name="_peru" required="required" placeholder="username" name="user"><br>
 
-                    <input class="login-input" type="password" autocomplete="off" id="_thakol" name="_thakol" required="required" placeholder="password" name="password"><br>
-
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    <input type="hidden" id="_uppu" name="_uppu" value="{{ browserSalt }}" />
-                </div>
-                <div class="col-md-1">
-                    <button class="login-submit" id="_submit" name="_submit" type="submit"><span class="fa fa-lock entypo-lock"></span></button>
-                </div>
-            </div>
-            <div id="error-show" style="color:white">
-                {% if error %}
-                    <div class="alert alert-danger">
-                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                        <b>Alert!</b>
-                        {{ error|trans}}
-                    </div>
-                {% endif %}
-            </div>
-        </form>
-    </div>  #}  
 {% endblock %}
 
 {% block jsInAdminPage %}

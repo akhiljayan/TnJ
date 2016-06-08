@@ -1,0 +1,386 @@
+{% extends 'TomJerryBundle:DefaultMaster:masterSite.html.twig' %} 
+{% block title %} Tom & Jerry : Home {% endblock %}
+
+{% block styleInSitePage %}
+    {{ parent() }}
+{% endblock %}
+
+{% block siteContent %}
+    <div class="wrapper">
+        <!--header starts-->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html" title="Kids Life"><img src="{{ asset('bundles/tomjerry/site/images/logo.png') }}" alt="Kids Life" title="Kids Life"></a>
+                </div>
+                <div class="contact-details">
+                    <p class="mail">
+                        <a href="#">contact@kidslife.com</a>
+                        <span class="fa fa-envelope"></span>
+                    </p>
+                    <p class="phone-no">
+                        <i>+1 959 552 5963</i>
+                        <span class="fa fa-phone"></span>
+                    </p>        
+                </div>
+            </div>
+            <!--menu-container starts-->
+            <div id="menu-container" style="z-index: 95;">
+                <div class="container">
+                    <!--nav starts-->
+                    <nav id="main-menu">
+                        <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                        <ul id="menu-main-menu" class="menu">
+                            <li class="mustard"> <a href="{{path('home_page')}}"> Home </a>  </li>                    
+                            <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red"> 
+                                <a href="{{path('about_us_page')}}"> About us </a> 
+                            </li>
+                            <li class="green"> <a href="{{path('our_staffs_page')}}"> Activities </a> {#IN CODE NAME OUR STAFS#} </li>
+                            <li class="purple"> <a href="{{path('full_galary_page')}}"> Gallary </a> </li>
+                            <li class="yellow"> <a href="{{path('services_page')}}"> Services </a> </li>
+                            <li class="pink"><a href="{{path('contact_us_page')}}" title="">Contact us</a></li>
+                        </ul>
+                    </nav>
+                    <!--nav ends-->
+
+                    <ul class="dt-sc-social-icons">
+                        <li><a href="#" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#" title="Youtube" class="dt-sc-tooltip-top youtube"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="#" title="Twitter" class="dt-sc-tooltip-top twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#" title="Google Plus" class="dt-sc-tooltip-top gplus"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--menu-container ends-->
+        </header>
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <!--breadcrumb-section starts-->
+            <div class="breadcrumb-section">
+                <div class="container">
+                    <h1>About us</h1>
+                    <div class="breadcrumb">
+                        <a href="{{path('home_page')}}">Home</a>
+                        <span class="fa fa-angle-double-right"></span>
+                        <span class="current">About us</span>
+                    </div>
+                </div>
+            </div>
+            <!--breadcrumb-section ends-->
+            <!--container starts-->
+            <div class="container">
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+
+                    <div class="column dt-sc-one-half first">
+                        <div class="about-slider-wrapper">
+                            <ul class="about-slider">
+                                <li> <img src="{{ asset('bundles/tomjerry/site/images/activity1.jpg') }}" alt="" title=""> </li>
+                                <li> <img src="{{ asset('bundles/tomjerry/site/images/activity2.jpg') }}" alt="" title=""> </li>
+                                <li> <img src="{{ asset('bundles/tomjerry/site/images/activity3.jpg') }}" alt="" title=""> </li>
+                            </ul>
+                        </div>	
+                    </div>
+
+                    <!--dt-sc-one-half starts-->
+                    <div class="column dt-sc-one-half">                  
+                        <h2>Our Leisure Time</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Lorem Ipsum available, but the majority have suffered alteration in some form. Vivamus adipiscing lobortis sagittis. Nullam tempus mauris dolor, ac malesuada arcu. Praesent dolor quam, tincidunt in sollicitudin sit amet, volutpat sed velit. Nullam non neque ipsum. Nullam tempus mauris dolor, ac malesuada arcu. Praesent dolor quam, tincidunt in sollicitudin sit amet, volutpat sed velit. Nullam non neque ipsum.</p>
+{#                        <a href="#" class="dt-sc-button small read-more"> Read More <span class="fa fa-chevron-circle-right"> </span></a>   #}
+                    </div> 
+                    <!--dt-sc-one-half ends-->
+
+                    <div class="dt-sc-hr"></div>
+
+                    <!--dt-sc-one-half starts-->
+                    <div class="dt-sc-one-half column first">
+                        <h2>Aim</h2>
+                        <div class="dt-sc-testimonial-carousel-wrapper">
+                            <ul class='dt-sc-testimonial-carousel'> 
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We aim to provide a safe, secure environment for children to learn, play and develop in.</q></blockquote>       
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We aim to employ innovative staff, who are committed to a higher standard of care for young children.</q></blockquote>      
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We aim to work with parents to encourage the emotional, social, physical, creative and intellectual development of children, reaching their full potential.</q></blockquote>        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We aim to secure a broad and balanced curriculum that provides young people with the best possible learning opportunities and experiences.</q></blockquote>        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We aim to encourage all children to develop positive attitudes towards themself and towards others.</q></blockquote>        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>               
+                    </div>      
+                    <!--dt-sc-one-half ends--> 
+                    <!--dt-sc-one-half starts-->
+                    <div class="dt-sc-one-half column"> 
+                        <h2>Our Objectives</h2>
+                        <div class="dt-sc-testimonial-carousel-wrapper">
+                            <ul class='dt-sc-testimonial-carousel'> 
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>To allow all children from UAE of various abilities and cultures to learn to respect each other through play situations.</q></blockquote>       
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>Through community awareness, nature and science we aim to expand each child&#39;s knowledge and understanding of the world they live in.</q></blockquote>      
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We strive to provide every child&#39;s emotional welfare and security during their time in nursery. </q></blockquote>        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>Each child will be treated as an individual with individual needs. Activities and curriculum planning will be applied to identify individual needs</q></blockquote>        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='dt-sc-testimonial'>
+                                        <blockquote><q>We promote positive relationships with parents and carer&#39;s by offering an open door policy..</q></blockquote>        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>      
+                    <!--dt-sc-one-half ends--> 
+                    <div class="dt-sc-hr"></div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <h2 class="dt-sc-hr-green-title">Meet Our Founder</h2> 
+                        <div class="author-details" style="margin-left:auto;margin-right:auto;width:20em;text-align: left;">
+                            <div class="dt-sc-team">	
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('bundles/tomjerry/site/images/mask.png')}}" alt="" title="">
+                                <img src="{{ asset('bundles/tomjerry/site/images/team1.jpg')}}" alt="" title="">
+                                <div class="dt-sc-image-overlay">
+                                    <a href="#" class="link"><span class="fa fa-link"></span></a>
+                                    <a href="#" class="zoom"><span class="fa fa-search"></span></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h4> Jack Daniels </h4>
+                                <h6> Senior Supervisor </h6>
+                                <p> Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. </p>
+                            </div>
+                        </div>
+                        </div>  
+                    </div>
+                    <div class="dt-sc-hr"></div>
+
+                    <h2 class="dt-sc-hr-green-title">Our Teachers</h2>
+                    <div class="column dt-sc-one-fourth first">
+                        <div class="dt-sc-team">	
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('bundles/tomjerry/site/images/mask.png')}}" alt="" title="">
+                                <img src="{{ asset('bundles/tomjerry/site/images/team1.jpg')}}" alt="" title="">
+                                <div class="dt-sc-image-overlay">
+                                    <a href="#" class="link"><span class="fa fa-link"></span></a>
+                                    <a href="#" class="zoom"><span class="fa fa-search"></span></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h4> Jack Daniels </h4>
+                                <h6> Senior Supervisor </h6>
+                                <p> Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <div class="dt-sc-team">	
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('bundles/tomjerry/site/images/mask.png')}}" alt="" title="">
+                                <img src="{{ asset('bundles/tomjerry/site/images/team2.jpg')}}" alt="" title="">
+                                <div class="dt-sc-image-overlay">
+                                    <a href="#" class="link"><span class="fa fa-link"></span></a>
+                                    <a href="#" class="zoom"><span class="fa fa-search"></span></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h4> Linda Glendell </h4>
+                                <h6> Teaching Professor </h6>
+                                <p> Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <div class="dt-sc-team">	
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('bundles/tomjerry/site/images/mask.png')}}" alt="" title="">
+                                <img src="{{ asset('bundles/tomjerry/site/images/team3.jpg')}}" alt="" title="">
+                                <div class="dt-sc-image-overlay">
+                                    <a href="#" class="link"><span class="fa fa-link"></span></a>
+                                    <a href="#" class="zoom"><span class="fa fa-search"></span></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h4> Kate Dennings </h4>
+                                <h6> Children Diet </h6>
+                                <p> Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <div class="dt-sc-team">	
+                            <div class="image">
+                                <img class="item-mask" src="{{ asset('bundles/tomjerry/site/images/mask.png')}}" alt="" title="">
+                                <img src="{{ asset('bundles/tomjerry/site/images/team4.jpg')}}" alt="" title="">
+                                <div class="dt-sc-image-overlay">
+                                    <a href="#" class="link"><span class="fa fa-link"></span></a>
+                                    <a href="#" class="zoom"><span class="fa fa-search"></span></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h4> Kristof Slinghot </h4>
+                                <h6> Management </h6>
+                                <p> Phasellus lorem augue, vulputate vel orci id, ultricies aliquet risus. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dt-sc-hr"></div>
+                    {#<h2>Our Sponsors</h2>
+                    <div class="dt-sc-sponsor-carousel-wrapper">                    
+                        <ul class="dt-sc-sponsor-carousel">
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo1.png')}}" alt="" title=""> </a> </li>
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo2.png')}}" alt="" title=""> </a> </li>
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo3.png')}}" alt="" title=""> </a> </li>
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo4.png')}}" alt="" title=""> </a> </li>
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo1.png')}}" alt="" title=""> </a> </li>
+                            <li> <a href="#" title=""> <img src="{{ asset('bundles/tomjerry/site/images/client-logo2.png')}}" alt="" title=""> </a> </li>
+                        </ul>
+
+                        <div class="carousel-arrows">
+                            <a class="sponsor-prev" href="#"> </a>
+                            <a class="sponsor-next" href="#"> </a>
+                        </div>
+                    </div>#}
+
+                </section>
+                <!--primary ends-->
+            </div>
+            <!--container ends-->
+        </div>
+        <!--main ends-->
+
+        <!--footer starts-->
+        <footer>
+            <!--footer-widgets-wrapper starts-->
+            <div class="footer-widgets-wrapper">
+                <!--container starts-->
+                <div class="container">
+
+                    <div class="column dt-sc-one-fourth first">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle red_sketch"> About Kids Life </h3>
+                            <p>Happy <a href="#"><strong>Kids Life</strong></a> comes with powerful theme options, which empowers you to quickly and easily build incredible store.</p>
+                            <ul>
+                                <li> <a href="#"> English Grammar Class </a> </li>
+                                <li> <a href="#"> Music class </a> </li>
+                                <li> <a href="#"> Swimming & Karate </a> </li>
+                                <li> <a href="#"> Lot of HTML Styles </a> </li>
+                                <li> <a href="#"> Unique News Page Design </a> </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_recent_entries">
+                            {#<h3 class="widgettitle green_sketch"> Latest Post </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list1.jpg') }}" alt="" title="">
+                                    </a>    
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span>       
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list2.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list3.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                            </ul>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget tweetbox">
+                            {#<h3 class="widgettitle yellow_sketch"><a href="#"> Twitter Feeds </a></h3>
+                            <div id="tweets_container"></div>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle steelblue_sketch">Contact</h3>
+                            <div class="textwidget">
+                                <p class="dt-sc-contact-info"><span class="fa fa-map-marker"></span> 4318 Mansion House, Greenland <br> United States </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-phone"></span> (000) 233 - 3236 </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-envelope"></span><a href="mailto:yourname@somemail.com"> Kidslife@somemail.com </a></p>
+                            </div>
+                        </aside>
+                        <aside class="widget mailchimp">
+                            <p> We're social </p>
+                            <form name="frmnewsletter" class="mailchimp-form" action="http://wedesignthemes.com/html/kidslife/php/subscribe.php" method="post">
+                                <p>
+                                    <span class="fa fa-envelope-o"> </span>
+                                    <input type="email" placeholder="Email Address" name="mc_email" required />	
+                                </p>	
+                                <input type="submit" value="Subscribe" class="button" name="btnsubscribe">
+                            </form>
+                            <div id="ajax_subscribe_msg"></div>
+                        </aside>
+                    </div>
+
+                </div>    
+                <!--container ends-->
+            </div>
+            <!--footer-widgets-wrapper ends-->  
+            <div class="copyright">
+                <div class="container">
+                    <p class="copyright-info">© 2014 Kids Life. All rights reserved. Design by <a href="http://themeforest.net/user/designthemes" title=""> Buddhathemes </a></p>
+                    <div class="footer-links">
+                        <p>Follow us</p>
+                        <ul class="dt-sc-social-icons">
+                            <li class="facebook"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/facebook.png') }}" alt="" title=""></a></li>
+                            <li class="twitter"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/twitter.png') }}" alt="" title=""></a></li>
+                            <li class="gplus"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/gplus.png') }}" alt="" title=""></a></li>
+                            <li class="pinterest"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/pinterest.png') }}" alt="" title=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </footer>
+        <!--footer ends-->
+
+    </div>
+{% endblock %}
+
+{% block jsInSitePage %}
+    {{ parent() }}
+    <script type="text/javascript">
+    </script>
+{% endblock %}

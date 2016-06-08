@@ -228,42 +228,49 @@
     <script type="text/javascript">
         (function ($) {
             $(document).ready(function () {
-                var thisForm = $("#{{form.vars.id}}");
-                thisForm.applyMust();
-                var peru = $("#_peru");
-                var thakol = $("#_thakol");
-                var uppu = $("#_uppu");
-                $('input[type="submit"]').attr('disabled', 'disabled');
-                var oPath = "{{ path('slbundle_login_user_test', {'userName' : '__per__'}) }}";
-                peru.focusout(function (e) {
-                    var userData = $(e.target).val();
-                    if (userData !== "") {
-                        var path = oPath.replace('__per__', userData);
-                        $.ajax({
-                            type: 'POST',
-                            url: path,
-                            success: function (result) {
-                                uppu.val(result.uppu);
-                                $('input[type="submit"]').removeAttr('disabled');
-                            }
-                        });
-                    } else {
-                        $('input[type="submit"]').attr('disabled', 'disabled');
-                    }
-                });
-                thisForm.submit(function () {
-                    thisForm.validate();
-                    if (thisForm.valid()) {
-                        var baS1 = sjcl.hash.sha256.hash(thakol.val());
-                        var digestS1 = sjcl.codec.hex.fromBits(baS1);
-                        var baS2 = sjcl.hash.sha256.hash(digestS1 + '{' + uppu.val() + '}');
-                        var digestS2 = sjcl.codec.hex.fromBits(baS2);
-                        thakol.val(digestS2);
-                    }
-                });
+        {% for key, flash in app.session.flashbag.all() %}
+            {% for message in flash %}
+                        var flashkey = "{{key}}";
+                        var flashmsg = "{{ message }}";
+                        addMsg(flashkey, flashmsg);
+            {% endfor %}
+        {% endfor %}
+                    var thisForm = $("#{{form.vars.id}}");
+                    thisForm.applyMust();
+                    var peru = $("#_peru");
+                    var thakol = $("#_thakol");
+                    var uppu = $("#_uppu");
+                    $('input[type="submit"]').attr('disabled', 'disabled');
+                    var oPath = "{{ path('slbundle_login_user_test', {'userName' : '__per__'}) }}";
+                    peru.focusout(function (e) {
+                        var userData = $(e.target).val();
+                        if (userData !== "") {
+                            var path = oPath.replace('__per__', userData);
+                            $.ajax({
+                                type: 'POST',
+                                url: path,
+                                success: function (result) {
+                                    uppu.val(result.uppu);
+                                    $('input[type="submit"]').removeAttr('disabled');
+                                }
+                            });
+                        } else {
+                            $('input[type="submit"]').attr('disabled', 'disabled');
+                        }
+                    });
+                    thisForm.submit(function () {
+                        thisForm.validate();
+                        if (thisForm.valid()) {
+                            var baS1 = sjcl.hash.sha256.hash(thakol.val());
+                            var digestS1 = sjcl.codec.hex.fromBits(baS1);
+                            var baS2 = sjcl.hash.sha256.hash(digestS1 + '{' + uppu.val() + '}');
+                            var digestS2 = sjcl.codec.hex.fromBits(baS2);
+                            thakol.val(digestS2);
+                        }
+                    });
 
 
-            });
-        })(jQuery);
+                });
+            })(jQuery);
     </script>
 {% endblock %}

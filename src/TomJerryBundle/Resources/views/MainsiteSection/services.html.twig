@@ -1,0 +1,395 @@
+{% extends 'TomJerryBundle:DefaultMaster:masterSite.html.twig' %} 
+{% block title %} Tom & Jerry : Home {% endblock %}
+
+{% block styleInSitePage %}
+    {{ parent() }}
+{% endblock %}
+
+{% block siteContent %}
+    <div class="wrapper">
+        <!--header starts-->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html" title="Kids Life"><img src="{{ asset('bundles/tomjerry/site/images/logo.png') }}" alt="Kids Life" title="Kids Life"></a>
+                </div>
+                <div class="contact-details">
+                    <p class="mail">
+                        <a href="#">contact@kidslife.com</a>
+                        <span class="fa fa-envelope"></span>
+                    </p>
+                    <p class="phone-no">
+                        <i>+1 959 552 5963</i>
+                        <span class="fa fa-phone"></span>
+                    </p>        
+                </div>
+            </div>
+            <!--menu-container starts-->
+            <div id="menu-container" style="z-index: 95;">
+                <div class="container">
+                    <!--nav starts-->
+                    <nav id="main-menu">
+                        <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                        <ul id="menu-main-menu" class="menu">
+                            <li class="mustard"> <a href="{{path('home_page')}}"> Home </a>  </li> 
+                            <li class="green"><a href="{{path('about_us_page')}}"> About us </a> </li>
+                            <li class="yellow"> <a href="{{path('our_staffs_page')}}"> Activities </a> {#IN CODE NAME OUR STAFS#} </li>
+                            <li class="purple"> <a href="{{path('full_galary_page')}}"> Gallary </a> </li>
+                            <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red"> 
+                                <a href="{{path('services_page')}}"> Services </a>
+                            </li>
+                            <li class="pink"><a href="{{path('contact_us_page')}}" title="">Contact us</a></li>
+                        </ul>
+                    </nav>
+                    <!--nav ends-->
+
+                    <ul class="dt-sc-social-icons">
+                        <li><a href="#" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#" title="Youtube" class="dt-sc-tooltip-top youtube"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="#" title="Twitter" class="dt-sc-tooltip-top twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#" title="Google Plus" class="dt-sc-tooltip-top gplus"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--menu-container ends-->
+        </header>
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <!--fullwidth_banner starts-->
+            <section class="fullwidth_banner">
+                <div class="container">
+                    <h1> Our Services </h1>
+                </div>
+            </section>
+            <!--fullwidth_banner ends-->
+            <!--primary starts-->
+            <section id="primary" class="content-full-width">
+                <!--container starts-->
+                <div class="container">
+                    <h2 class="dt-sc-hr-green-title">Course Overview</h2> 
+
+                    <!--dt-sc-one-half starts-->
+                    <div class="dt-sc-one-half column first">
+                        <div class="dt-sc-toggle-frame-set">
+                            <div class="dt-sc-toggle-frame">
+                                <h5 class="dt-sc-toggle-accordion active"><a href="#">Who We Are</a></h5>
+                                <div class="dt-sc-toggle-content">
+                                    <div class="block">
+                                        Etori haum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est elige ndi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptasi ass umenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dt-sc-toggle-frame">
+                                <h5 class="dt-sc-toggle-accordion"><a href="#">PROUD OF WHAT WE DO.</a></h5>
+                                <div class="dt-sc-toggle-content">
+                                    <div class="block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elit turpis, a porttitor tellus sollicitudin at. 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dt-sc-toggle-frame">
+                                <h5 class="dt-sc-toggle-accordion"><a href="#">HOW WE WORK</a></h5>
+                                <div class="dt-sc-toggle-content">
+                                    <div class="block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elit turpis, a porttitor tellus sollicitudin at.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dt-sc-toggle-frame">
+                                <h5 class="dt-sc-toggle-accordion"><a href="#">WHY WE DO IT</a></h5>
+                                <div class="dt-sc-toggle-content">
+                                    <div class="block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elit turpis, a porttitor tellus sollicitudin at.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dt-sc-toggle-frame">
+                                <h5 class="dt-sc-toggle-accordion"><a href="#">WHAT IS THE RESULT?</a></h5>
+                                <div class="dt-sc-toggle-content">
+                                    <div class="block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi hendrerit elit turpis, a porttitor tellus sollicitudin at.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--dt-sc-one-half ends-->
+
+                    <!--dt-sc-one-half starts-->
+                    <div class="column dt-sc-one-half">                  
+                        <div class="dt-sc-toggle-frame-set course">
+                            <h5 class="dt-sc-toggle-accordion active"><a href="#">Who we are?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                            <h5 class="dt-sc-toggle-accordion "><a href="#">What we do in academics?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                            <h5 class="dt-sc-toggle-accordion "><a href="#">How do we work for strategic plans?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                            <h5 class="dt-sc-toggle-accordion "><a href="#">Our overall action towards target?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                            <h5 class="dt-sc-toggle-accordion "><a href="#">IThe outcome result of awesome performance?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                            <h5 class="dt-sc-toggle-accordion "><a href="#">What is the purpose of Registration?</a></h5>
+                            <div class="dt-sc-toggle-content">
+                                <div class="block">
+                                    Consectetur adipiscing elit. Praesent pulvinar massa nec augue malsuada in aliquam odio interdum.
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!--dt-sc-one-half ends-->
+
+                </div>
+                <!--container ends-->
+                <div class="dt-sc-hr"></div>
+
+                <!--fullwidth-background starts-->
+                <section class="fullwidth-background dt-sc-parallax-section turquoise-bg">
+                    <!--container starts-->
+                    <div class="container">
+                        <!--dt-sc-one-half starts-->
+                        <div class="dt-sc-one-half column first">
+                            <h2>What do we teach?</h2>
+                            <!--dt-sc-one-half starts-->
+                            <div class="dt-sc-one-half column first">
+
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 1 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank"> Alternative Music </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+                                <div class="dt-sc-hr-very-small"></div>
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 2 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank"> European Music </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+                                <div class="dt-sc-hr-very-small"></div>
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 3 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank"> Swimming Camp </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+
+                            </div>
+                            <!--dt-sc-one-half ends-->
+
+                            <!--dt-sc-one-half starts-->
+                            <div class="dt-sc-one-half column">
+
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 4 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank">  Classical Music </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+                                <div class="dt-sc-hr-very-small"></div>
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 5 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank"> Asian Pop </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+                                <div class="dt-sc-hr-very-small"></div>
+                                <div class="dt-sc-ico-content type2">
+                                    <div class="icon"> 
+                                        <span> 6 </span> 
+                                    </div>
+                                    <h4><a href="#" target="_blank"> Sing & Dance </a></h4>
+                                    <p>Nam ullamcorper, diam sit amet euismod pelleontesque, eros risus rhoncus libero, inst tibulum nisl ligula....</p>
+                                </div>
+
+                            </div>
+                            <!--dt-sc-one-half ends-->
+                        </div>
+                        <!--dt-sc-one-half ends-->
+
+                        <!--dt-sc-one-half starts-->
+                        <div class="dt-sc-one-half column">
+                            <h2>How do we Teach?</h2>
+                            <div class="add-slider-wrapper">
+                                <ul class="add-slider">
+                                    <li> <iframe src="" width="464" height="345"></iframe> </li>
+                                    <li> <img src="{{ asset('bundles/tomjerry/site/images/add2.jpg') }}" alt="" title=""> </li>
+                                    <li> <img src="{{ asset('bundles/tomjerry/site/images/add1.jpg') }}" alt="" title=""> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--dt-sc-one-half ends-->
+                    </div>
+                    <!--container ends-->
+                </section>
+                <!--fullwidth-background ends-->
+
+                <div class="dt-sc-hr"></div>
+                <!--container starts-->
+                <div class="container">
+                    
+                </div>
+                <!--container ends-->
+                <div class="dt-sc-hr"></div>  
+                <!--fullwidth-background starts-->
+                <section class="fullwidth-background turquoise-plain-bg">
+                    <!--container starts-->
+                    <div class="container"> 
+                        <h2 class="dt-sc-hr-white-title">Admission Form</h2> 
+                        <form method="post" action="http://wedesignthemes.com/html/kidslife/php/admissionmail.php" id="admissionform" name="admissionform" class="admission-form">
+                            <p class="dt-sc-one-third column first">
+                                <input id="name" name="txtname" type="text" placeholder="Name" required="">
+                            </p>
+                            <p class="dt-sc-one-third column">
+                                <input id="age" name="txtage" type="text" placeholder="Age" required="">
+                            </p>
+                            <p class="dt-sc-one-third column">
+                                <input id="course" name="txtcourse" type="text" placeholder="Course" required="">
+                            </p>
+                            <p>
+                                <textarea id="admission" name="txtmessage" placeholder="Message"></textarea>
+                            </p>
+                            <div id="ajax_admission_msg"> </div>
+                            <p class="aligncenter">
+                                <input name="submit" type="submit" id="submit" value="Submit Form">
+                            </p>
+                        </form>
+                    </div>
+                    <!--container ends-->
+                </section>
+                <!--fullwidth-background ends--> 
+            </section>
+            <!--primary ends-->            
+        </div>
+        <!--main ends-->
+
+        <!--footer starts-->
+        <footer>
+            <!--footer-widgets-wrapper starts-->
+            <div class="footer-widgets-wrapper">
+                <!--container starts-->
+                <div class="container">
+
+                    <div class="column dt-sc-one-fourth first">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle red_sketch"> About Kids Life </h3>
+                            <p>Happy <a href="#"><strong>Kids Life</strong></a> comes with powerful theme options, which empowers you to quickly and easily build incredible store.</p>
+                            <ul>
+                                <li> <a href="#"> English Grammar Class </a> </li>
+                                <li> <a href="#"> Music class </a> </li>
+                                <li> <a href="#"> Swimming & Karate </a> </li>
+                                <li> <a href="#"> Lot of HTML Styles </a> </li>
+                                <li> <a href="#"> Unique News Page Design </a> </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_recent_entries">
+                            {#<h3 class="widgettitle green_sketch"> Latest Post </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list1.jpg') }}" alt="" title="">
+                                    </a>    
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span>       
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list2.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list3.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                            </ul>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget tweetbox">
+                            {#<h3 class="widgettitle yellow_sketch"><a href="#"> Twitter Feeds </a></h3>
+                            <div id="tweets_container"></div>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle steelblue_sketch">Contact</h3>
+                            <div class="textwidget">
+                                <p class="dt-sc-contact-info"><span class="fa fa-map-marker"></span> 4318 Mansion House, Greenland <br> United States </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-phone"></span> (000) 233 - 3236 </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-envelope"></span><a href="mailto:yourname@somemail.com"> Kidslife@somemail.com </a></p>
+                            </div>
+                        </aside>
+                        <aside class="widget mailchimp">
+                            <p> We're social </p>
+                            <form name="frmnewsletter" class="mailchimp-form" action="http://wedesignthemes.com/html/kidslife/php/subscribe.php" method="post">
+                                <p>
+                                    <span class="fa fa-envelope-o"> </span>
+                                    <input type="email" placeholder="Email Address" name="mc_email" required />	
+                                </p>	
+                                <input type="submit" value="Subscribe" class="button" name="btnsubscribe">
+                            </form>
+                            <div id="ajax_subscribe_msg"></div>
+                        </aside>
+                    </div>
+
+                </div>    
+                <!--container ends-->
+            </div>
+            <!--footer-widgets-wrapper ends-->  
+            <div class="copyright">
+                <div class="container">
+                    <p class="copyright-info">© 2014 Kids Life. All rights reserved. Design by <a href="http://themeforest.net/user/designthemes" title=""> Buddhathemes </a></p>
+                    <div class="footer-links">
+                        <p>Follow us</p>
+                        <ul class="dt-sc-social-icons">
+                            <li class="facebook"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/facebook.png') }}" alt="" title=""></a></li>
+                            <li class="twitter"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/twitter.png') }}" alt="" title=""></a></li>
+                            <li class="gplus"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/gplus.png') }}" alt="" title=""></a></li>
+                            <li class="pinterest"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/pinterest.png') }}" alt="" title=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </footer>
+        <!--footer ends-->
+
+    </div>
+{% endblock %}
+
+{% block jsInSitePage %}
+    {{ parent() }}
+    <script type="text/javascript">
+    </script>
+{% endblock %}

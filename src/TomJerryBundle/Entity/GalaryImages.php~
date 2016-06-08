@@ -1,0 +1,99 @@
+<?php
+
+namespace TomJerryBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * GalaryImages
+ *
+ * @ORM\Table(name="galary_images")
+ * @ORM\Entity(repositoryClass="TomJerryBundle\Repository\GalaryImagesRepository")
+ */
+class GalaryImages
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="guId", type="string", length=32)
+     */
+    private $guId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=70)
+     */
+    private $name;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="size", type="integer")
+     */
+    private $size;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imgType", type="string", length=30)
+     */
+    private $imgType;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="uploadedDate", type="datetime")
+     */
+    private $uploadedDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imgBlob", type="blob")
+     */
+    private $imgBlob;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="imgHeight", type="integer", nullable=true)
+     */
+    private $imgHeight;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="imgWidth", type="integer", nullable=true)
+     */
+    private $imgWidth;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AkjnBundle\Entity\User")
+     * @ORM\JoinColumn(name="uploaded_by", referencedColumnName="id")
+     */
+    private $uploadedBy;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="enableDissable", type="boolean")
+     */
+    private $enableDissable;
+    
+    public function __construct() {
+        $this->guId = md5(uniqid(php_uname('n')));
+        $this->uploadedDate = new \DateTime("now");
+    }
+
+
+}

@@ -23,7 +23,7 @@
                 <ul class="nav nav-pills nav-stacked custom-nav">
 
                     <li class="active">
-                        <a href="index.html">
+                        <a href="{{path('_index')}}">
                             <i class="lnr lnr-power-switch"></i>
                             <span>Dashboard</span>
                         </a>
@@ -83,7 +83,7 @@
                     </li>#}
 
                     <li>
-                        <a href="codes.html">
+                        <a href="{{path('admin_redirect_galary')}}">
                             <i class="lnr lnr-pencil"></i> 
                             <span>Galary</span>
                         </a>
@@ -175,7 +175,7 @@
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" style="cursor: not-allowed">
-                                                <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                <div class="user_img"><img src="{{ asset('bundles/tomjerry/admin/images/1.png') }}" alt=""></div>
                                                 <div class="notification_desc">
                                                     <p>List Down Notifications(servise disabled)</p>
                                                     <p><span>Count</span></p>
@@ -201,7 +201,7 @@
                                         <li>
                                         <li>
                                             <a href="javascript:void(0);" style="cursor: not-allowed">
-                                                <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                <div class="user_img"><img src="{{ asset('bundles/tomjerry/admin/images/1.png') }}" alt=""></div>
                                                 <div class="notification_desc">
                                                     <p>List Down Pending Tasks(servise disabled)</p>
                                                     <p><span>Count</span></p>
@@ -225,7 +225,7 @@
                                 <li class="dropdown profile_details_drop">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                         <div class="profile_img">	
-                                            <span style="background:url(images/1.jpg) no-repeat center"> </span> 
+                                            <span style="background:url({{ asset('bundles/tomjerry/admin/images/1.jpg') }}) no-repeat center"> </span> 
                                             <div class="user-name">
                                                 <p>{{app.user.username}}
                                                     <span>

@@ -23,6 +23,7 @@
             <link href="{{ asset('bundles/tomjerry/admin/css/style.css') }}" rel='stylesheet' type='text/css' />
             <link href="{{ asset('bundles/tomjerry/admin/css/icon-font.min.css') }}" rel='stylesheet' type='text/css' />
             <link href="{{ asset('bundles/tomjerry/admin/css/animate.css') }}" rel="stylesheet"> 
+            <link href="{{ asset('bundles/tomjerry/admin/vendor/jgrowl-notifications/jgrowl.css') }}" rel="stylesheet"> 
         {% endblock %}
     </head>
     <body>
@@ -49,6 +50,7 @@
             <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/bootstrap-datepicker.min.js') }}" type="text/javascript" ></script>
             <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.hashchange.js') }}" type="text/javascript" ></script>
             <script src="{{ asset('bundles/tomjerry/admin/js/inbuiltJS/jquery.easytabs.js') }}" type="text/javascript" ></script>
+            <script src="{{ asset('bundles/tomjerry/admin/vendor/jgrowl-notifications/jgrowl.js') }}" type="text/javascript" ></script>
 
             <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
             <script src="{{ asset('bundles/tomjerry/admin/js/wow.min.js') }}"></script>
@@ -92,6 +94,34 @@
                         });
                     });
                 })(jQuery);
+                function addMsg(type, msg) {
+                    var sticky = false;
+                    var life = 3000;
+                    switch (type) {
+                        case 'danger':
+                            theme = 'bg-red';
+                            life = 10000;
+                            break;
+                        case 'success':
+                            theme = 'bg-green';
+                            break;
+                        case 'warning':
+                            theme = 'bg-orange';
+                            break;
+                        case 'info':
+                            theme = 'bg-azure';
+                            break;
+                        default:
+                            theme = 'bg-gray';
+
+                    }
+                    $.jGrowl(msg, {
+                        sticky: sticky,
+                        position: "top-right",
+                        theme: theme,
+                        life: life
+                    });
+                }
             </script>
         {% endblock %}
     </body>

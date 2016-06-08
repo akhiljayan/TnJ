@@ -1,3 +1,7 @@
+admin_route:
+    resource: "adminRoute.yml"
+    prefix: /admin
+    
 tom_jerry_homepage:
     path:     /
     defaults: { _controller: TomJerryBundle:Default:index }
@@ -5,7 +9,23 @@ tom_jerry_homepage:
 home_page:
     path:     /
     defaults: { _controller: TomJerryBundle:Default:index }
-
-admin_route:
-    resource: "adminRoute.yml"
-    prefix: /admin
+    
+about_us_page:
+    path:     /about-us
+    defaults: { _controller: TomJerryBundle:Default:aboutUs }
+    
+our_staffs_page:
+    path:     /our-staffs
+    defaults: { _controller: TomJerryBundle:Default:outStaffs }
+    
+services_page:
+    path:     /services
+    defaults: { _controller: TomJerryBundle:Default:services }
+    
+contact_us_page:
+    path:     /contact-us
+    defaults: { _controller: TomJerryBundle:Default:contactUs }
+    
+full_galary_page:
+    path:     /gallary
+    defaults: { _controller: TomJerryBundle:Default:fullGalaryPage }

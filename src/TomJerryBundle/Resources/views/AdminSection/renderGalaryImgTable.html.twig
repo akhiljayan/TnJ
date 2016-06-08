@@ -1,0 +1,135 @@
+<style type="text/css">
+    .onoffswitch {
+        position: relative; width: 100px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #999999; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "Enable";
+        padding-left: 0px;
+        background-color: #34A7C1; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Dissable";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 18px; margin: 6px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 66px;
+        border: 2px solid #999999; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+    }
+</style>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        {% if images|length > 0 %}
+            <table class="table table-bordered table-striped table-condensed CaptionSmall">
+                <thead class=" bg-light-blue-gradient">
+                    <tr>
+                        <th>#</th>
+                        <th>Image</th>
+                        <th>File Name</th>
+                        <th>Display Name</th>
+                        <th>Uploaded date</th>
+                        <th>Uploaded By</th>
+                        <th>Enable/Dissable</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for image in images %}
+                        {%set  path = 'galary-uploads/'~image.name%}
+                        <tr id="{{image.guId}}">
+                            <td>{{ loop.index }}</td>
+                            <td><img src="{{ asset(path) }}" alt="{{image.name}}" height="48" width="85" style="margin:5px"/></td>
+                            <td><b><p class="text-light-blue">{{ image.name}}</p></b></td>
+                            <td>
+                                <b>
+                                    {%if image.imgDisplayName is null%}
+                                        <p class="text-red">--</p>
+                                        <a href="javascript:void(0)" id="" data-id="{{image.guId}}" data-pur="AD" class="pull-right add-edit-display-title">Add</a>
+                                    {%else%}
+                                        <p class="text-red">{{ image.imgDisplayName }}</p>
+                                        <a href="javascript:void(0)" id="" data-id="{{image.guId}}" data-pur="ED" data-disptext="{{ image.imgDisplayName }}" class="pull-right add-edit-display-title">Edit</a>
+                                    {%endif%}
+                                </b>
+                            </td>
+                            <td>{{ image.uploadedDate|date("d/m/Y")}}</td>
+                            <td>{{image.uploadedBy.username}}</td>
+                            <td style="text-align:center">
+                                {%if image.enableDissable == 1%}
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" data-guid="{{image.guId}}" id="myonoffswitch-{{image.id}}" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch-{{image.id}}">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                {%else%}
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" data-guid="{{image.guId}}" id="myonoffswitch-{{image.id}}" >
+                                        <label class="onoffswitch-label" for="myonoffswitch-{{image.id}}">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                {%endif%}
+                            </td>
+                            <td>Delete</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4 class="alert alert-info">No Projects are pending for DPR preparation </h4>
+        {% endif %}
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" style="height:65px">
+                <div class="col-md-12">
+                    <div class="col-md-8">
+                        <input type="input" class="form-control" placeholder="Display name" id="display-name-input">
+                        <input type="hidden" id="hidden-input-guid">
+                        <input type="hidden" id="hidden-input-pur">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="display-text-submit" data-dismiss="modal" class="btn btn-success pull-right">Submit</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

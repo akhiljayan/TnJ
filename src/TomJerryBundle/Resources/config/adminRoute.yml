@@ -5,3 +5,23 @@ admin_login_page:
 _index:
     pattern: /panel
     defaults: { _controller: "TomJerryBundle:Admin:mainRedirect" }
+    
+admin_redirect_galary:
+    pattern: /admin-galary
+    defaults: { _controller: "TomJerryBundle:Admin:redirectGalary" }
+    
+uploading_end_point:
+    pattern: /uploading/endpoint
+    defaults: { _controller: "TomJerryBundle:Admin:uploaderEndPoint" }
+    
+render_galary_image_table:
+    pattern: /galary/image/table
+    defaults: { _controller: "TomJerryBundle:Admin:renderGalaryImgTable" }
+    
+add_display_title_img:
+    pattern: /display-title/{guId}
+    defaults: { _controller: "TomJerryBundle:Admin:saveDisplayTitle" }
+    
+enable_disable_img:
+    pattern: /enable-dissable/{guId}
+    defaults: { _controller: "TomJerryBundle:Admin:enableDissableGalaryImage" }

@@ -1,0 +1,238 @@
+{% extends 'TomJerryBundle:DefaultMaster:masterSite.html.twig' %} 
+{% block title %} Tom & Jerry : Home {% endblock %}
+
+{% block styleInSitePage %}
+    {{ parent() }}
+{% endblock %}
+
+{% block siteContent %}
+    <div class="wrapper">
+        <!--header starts-->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html" title="Kids Life"><img src="{{ asset('bundles/tomjerry/site/images/logo.png') }}" alt="Kids Life" title="Kids Life"></a>
+                </div>
+                <div class="contact-details">
+                    <p class="mail">
+                        <a href="#">contact@kidslife.com</a>
+                        <span class="fa fa-envelope"></span>
+                    </p>
+                    <p class="phone-no">
+                        <i>+1 959 552 5963</i>
+                        <span class="fa fa-phone"></span>
+                    </p>        
+                </div>
+            </div>
+            <!--menu-container starts-->
+            <div id="menu-container" style="z-index: 95;">
+                <div class="container">
+                    <!--nav starts-->
+                    <nav id="main-menu">
+                        <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                        <ul id="menu-main-menu" class="menu">
+                            <li class="mustard"> <a href="{{path('home_page')}}"> Home </a>  </li> 
+                            <li class="green"><a href="{{path('about_us_page')}}"> About us </a> </li>
+                            <li class="yellow"> <a href="{{path('our_staffs_page')}}"> Activities </a> {#IN CODE NAME OUR STAFS#} </li>
+                            <li class="purple"> <a href="{{path('full_galary_page')}}"> Gallary </a> </li>
+                            <li class="pink"><a href="{{path('services_page')}}"> Services </a></li>
+                            <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red"> 
+                                <a href="{{path('contact_us_page')}}" title="">Contact us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!--nav ends-->
+
+                    <ul class="dt-sc-social-icons">
+                        <li><a href="#" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#" title="Youtube" class="dt-sc-tooltip-top youtube"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="#" title="Twitter" class="dt-sc-tooltip-top twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#" title="Google Plus" class="dt-sc-tooltip-top gplus"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--menu-container ends-->
+        </header>
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <!--breadcrumb-section starts-->
+            <div class="breadcrumb-section">
+                <div class="container">
+                    <h1>Contact</h1>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="fa fa-angle-double-right"></span>
+                        <span class="current">Contact</span>
+                    </div>
+                </div>
+            </div>
+            <!--breadcrumb-section ends-->
+            <!--container starts-->
+            <div class="container">
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+
+{#                    <div id="map"> </div>#}
+
+                    <div class="dt-sc-hr"> </div>
+
+                    <!--dt-sc-two-third starts-->
+                    <div class="column dt-sc-three-fourth first contact_form_outer">
+                        <form name="frcontact" class="contact-form" method="post" action="http://wedesignthemes.com/html/kidslife/php/contactmail.php">
+                            <h2>We'd Like to Hear From You!</h2>
+                            <p class="column dt-sc-one-third first">
+                                <input id="name" name="txtname" type="text" placeholder="Name" required="">
+                            </p>
+                            <p class="column dt-sc-one-third">
+                                <input id="email" name="txtemail" type="email" placeholder="Email ID" required="">
+                            </p>
+                            <p class="column dt-sc-one-third">
+                                <input id="subject" name="txtsubject" type="text" placeholder="Subject" required="">
+                            </p>
+                            <p>
+                                <textarea id="comment" name="txtmessage" placeholder="Message"></textarea>
+                            </p>
+                            <div id="ajax_contact_msg"> </div>
+                            <p>
+                                <input name="submit" type="submit" id="submit" class="dt-sc-button medium" value="Send Email">
+                            </p>
+                        </form>
+                    </div>
+                    <!--dt-sc-two-third ends-->
+
+                    <!--dt-sc-one-third starts-->
+                    <div class="column dt-sc-one-fourth class_hours">
+                        <h2>Class Hours</h2>
+                        <ul class="class_hours">
+                            <li>Monday<span>9am - 3pm</span></li>
+                            <li>Tuesday<span>9am - 3pm</span></li>
+                            <li>Wednesday<span>9am - 3pm</span></li>
+                            <li>Thursday<span>9am - 3pm</span></li>
+                            <li>Friday<span>9am - 3pm</span></li>
+                            <li>Saturday<span>Holiday</span></li>
+                            <li>Sunday<span>Holiday</span></li>
+                        </ul>
+                        <div class="dt-sc-hr-small"></div>
+                        <p><strong><span class="highlighter">We care</span> about your dearest</strong></p>
+                        <ul class="dt-sc-social-icons">
+                            <li class="facebook"><a href="#" title="Facebook" class="dt-sc-tooltip-bottom"><img src="{{ asset('bundles/tomjerry/site/images/facebook.png') }}" alt="" title=""></a></li>
+                            <li class="twitter"><a href="#" title="Twitter" class="dt-sc-tooltip-bottom"><img src="{{ asset('bundles/tomjerry/site/images/twitter.png') }}" alt="" title=""></a></li>
+                            <li class="gplus"><a href="#" title="Google Plus" class="dt-sc-tooltip-bottom"><img src="{{ asset('bundles/tomjerry/site/images/gplus.png') }}" alt="" title=""></a></li>
+{#                            <li class="pinterest"><a href="#" title="Pinterest" class="dt-sc-tooltip-bottom"><img src="{{ asset('bundles/tomjerry/site/images/pinterest.png') }}" alt="" title=""></a></li>#}
+                        </ul>
+                    </div>
+                    <!--dt-sc-one-third ends-->
+
+                </section>
+                <!--primary ends-->
+            </div>
+            <!--container ends-->           
+        </div>
+        <!--main ends-->
+
+        <!--footer starts-->
+        <footer>
+            <!--footer-widgets-wrapper starts-->
+            <div class="footer-widgets-wrapper">
+                <!--container starts-->
+                <div class="container">
+
+                    <div class="column dt-sc-one-fourth first">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle red_sketch"> About Kids Life </h3>
+                            <p>Happy <a href="#"><strong>Kids Life</strong></a> comes with powerful theme options, which empowers you to quickly and easily build incredible store.</p>
+                            <ul>
+                                <li> <a href="#"> English Grammar Class </a> </li>
+                                <li> <a href="#"> Music class </a> </li>
+                                <li> <a href="#"> Swimming & Karate </a> </li>
+                                <li> <a href="#"> Lot of HTML Styles </a> </li>
+                                <li> <a href="#"> Unique News Page Design </a> </li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_recent_entries">
+                            {#<h3 class="widgettitle green_sketch"> Latest Post </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list1.jpg') }}" alt="" title="">
+                                    </a>    
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span>       
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list2.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('bundles/tomjerry/site/images/blog_list3.jpg') }}" alt="" title="">
+                                    </a>
+                                    <h6><a href="#"> Amazing post with all  goodies </a></h6>
+                                    <span> March 23, 2014 </span> 
+                                </li>
+                            </ul>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget tweetbox">
+                            {#<h3 class="widgettitle yellow_sketch"><a href="#"> Twitter Feeds </a></h3>
+                            <div id="tweets_container"></div>#}
+                        </aside>
+                    </div>
+                    <div class="column dt-sc-one-fourth">
+                        <aside class="widget widget_text">
+                            <h3 class="widgettitle steelblue_sketch">Contact</h3>
+                            <div class="textwidget">
+                                <p class="dt-sc-contact-info"><span class="fa fa-map-marker"></span> 4318 Mansion House, Greenland <br> United States </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-phone"></span> (000) 233 - 3236 </p>
+                                <p class="dt-sc-contact-info"><span class="fa fa-envelope"></span><a href="mailto:yourname@somemail.com"> Kidslife@somemail.com </a></p>
+                            </div>
+                        </aside>
+                        <aside class="widget mailchimp">
+                            <p> We're social </p>
+                            <form name="frmnewsletter" class="mailchimp-form" action="http://wedesignthemes.com/html/kidslife/php/subscribe.php" method="post">
+                                <p>
+                                    <span class="fa fa-envelope-o"> </span>
+                                    <input type="email" placeholder="Email Address" name="mc_email" required />	
+                                </p>	
+                                <input type="submit" value="Subscribe" class="button" name="btnsubscribe">
+                            </form>
+                            <div id="ajax_subscribe_msg"></div>
+                        </aside>
+                    </div>
+
+                </div>    
+                <!--container ends-->
+            </div>
+            <!--footer-widgets-wrapper ends-->  
+            <div class="copyright">
+                <div class="container">
+                    <p class="copyright-info">© 2014 Kids Life. All rights reserved. Design by <a href="http://themeforest.net/user/designthemes" title=""> Buddhathemes </a></p>
+                    <div class="footer-links">
+                        <p>Follow us</p>
+                        <ul class="dt-sc-social-icons">
+                            <li class="facebook"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/facebook.png') }}" alt="" title=""></a></li>
+                            <li class="twitter"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/twitter.png') }}" alt="" title=""></a></li>
+                            <li class="gplus"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/gplus.png') }}" alt="" title=""></a></li>
+                            <li class="pinterest"><a href="#"><img src="{{ asset('bundles/tomjerry/site/images/pinterest.png') }}" alt="" title=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </footer>
+        <!--footer ends-->
+
+    </div>
+{% endblock %}
+
+{% block jsInSitePage %}
+    {{ parent() }}
+    <script type="text/javascript">
+    </script>
+{% endblock %}

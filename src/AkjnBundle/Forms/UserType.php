@@ -16,35 +16,40 @@ class UserType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
-        $builder->add('displayName', 'text', array(
+        $builder->add('name', 'text', array(
             'required' => false,
             'mapped' => false,
-            'attr' => array('class' => 'vd_name_required')));
-//        $builder->add('dob', 'date', array('required' => false, 'widget' => 'single_text', 'format' => 'dd/MM/yyyy', 'attr' => array('class' => 'vd_date_required', 'maxlength' => 10)));
+            'label' => 'Name',
+            'attr' => array('class' => 'vd_name_required registration-input')));
+        
+        $builder->add('userName', 'text', array(
+            'required' => true,
+            'mapped' => false,
+            'label' => 'username',
+            'attr' => array('class' => 'vd_name_required registration-input')));
+        
         $builder->add('email', 'email', array(
-            'attr' => array('class' => 'vd_email_required'), 
-            'required' => false,
+            'attr' => array('class' => 'vd_email_required registration-input'), 
+            'required' => true,
             'mapped' => false));
+        
         $builder->add('mobileNumber', 'text', array(
             'required' => false, 
             'mapped' => false,
-            'attr' => array('class' => 'vd_mobile_required', 'maxlength' => 10)));
+            'attr' => array('class' => 'vd_mobile_required  registration-input', 'maxlength' => 10)));
+        
         $builder->add('password', 'repeated', array(
             'type' => 'password',
-//            'invalid_message' => 'The password fields must match.',
-            'options' => array('attr' => array('class' => 'password-field')),
+            'invalid_message' => 'The password fields must match.',
+            'options' => array('attr' => array('class' => 'password-field  registration-input')),
             'required' => true,
             'first_options' => array('label' => 'Password'),
             'second_options' => array('label' => 'Repeat Password'),
             'mapped' => false,
         ));
-        $builder->add('password', 'password', array('required' => false, 'attr' => array('class' => 'vd_name_required')));
-        $builder->add('checkpassword', 'password', array('mapped' => false, 'required' => false));
         
-
-
-        $builder->add('reset', 'reset', array('attr' => array('class' => 'ui-button')));
-        $builder->add('submit', 'submit', array('label' => 'Register', 'attr' => array('class' => 'ui-button')));
+        $builder->add('reset', 'reset', array('attr' => array('class' => 'registration-submit')));
+        $builder->add('submit', 'submit', array('label' => 'Register', 'attr' => array('class' => ' registration-submit')));
     }
 
     /**

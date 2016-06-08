@@ -140,16 +140,28 @@ class RegistrationController extends Controller {
                     'form' => $form->createView(),
         ));
     }
-    
-    public function createNewTJAdminUserAction(Request $request){
+
+    public function createNewTJAdminUserAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
         $user = new User();
         $userType = new \AkjnBundle\Forms\UserType();
-        $form = $this->createForm($userType, $user, array('action'  => $this->generateUrl('registration_new_tj_admin_user')));
+        $form = $this->createForm($userType, $user, array('action' => $this->generateUrl('registration_new_tj_admin_user')));
         $form->handleRequest($request);
-        if($form->isValid()){
-            var_dump("asdasd");
-            die;
+        if ($form->isValid()) {
+            $username = $form['userName']->getData();
+            $pass =  $form['password']->getData();
+            $fosUserManager = $this->get('fos_user.user_manager');
+            $newUser = $fosUserManager->createUser();
+            $newUser->setUsername($username);
+            $newUser->setPlainPassword($pass);
+            $newUser->setEnabled(true);
+            $newUser->setRoles(array('ROLE_TMJR_ADMIN'));
+            $newUser->setEmail($form['email']->getData());
+            $newUser->setCredentialsExpireAt();
+            $fosUserManager->updateUser($newUser);
+            $em->flush();
+            $this->get('session')->getFlashBag()->add('success', 'New admin user created successfully with username "' . $username . '" and password "' . $pass . '".');
+            return $this->redirect($this->generateUrl('login'));
         }
         return $this->render('AkjnBundle:Registration:newTJAdminUser.html.twig', array(
                     'form' => $form->createView(),
